@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.css" rel="stylesheet" />
+  <link href="https://fonts.cdnfonts.com/css/sofia-pro" rel="stylesheet">
+  <link href="https://db.onlinewebfonts.com/c/406b56da0c31245c249b3a3c61560d1a?family=Joyride+W05+STD" rel="stylesheet">
+  <title>Document</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;1,200;1,300;1,400;1,600;1,700&display=swap');
+
+    h1 {
+      font-family: 'Joyride W05 STD';
+    }
+
+    kebalik:hover {
+      transform: scaleX(-1);
+      scale: 1.10;
+      animation-duration: 500;
+      transition: kebalik;
+    }
+
+    @keyframes kebalik {
+      from {
+        transform: scaleX(0);
+      }
+
+      to {
+        transform: scaleX(-1);
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav class="bg-white border-gray-200">
+    <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+      <button data-collapse-toggle="navbar-cta" type="button"
+        class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-200"
+        aria-controls="navbar-search" aria-expanded="false">
+        <span class="sr-only">Open main menu</span>
+        <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M1 1h15M1 7h15M1 13h15" />
+        </svg>
+      </button>
+      <div class="flex md:order-2">
+        <a href="https://flowbite.com/" class="flex items-center space-x-3 rtl:space-x-reverse">
+          <span class="self-center md:text-4xl text-xl font-medium whitespace-nowrap dark:text-black"
+            style="font-family: 'Joyride W05 STD';">MYSNEAKERS</span>
+        </a>
+      </div>
+      <div class="flex md:order-2">
+        <button type="button" data-collapse-toggle="navbar-search" aria-controls="navbar-search" aria-expanded="false"
+          class="md:hidden text-gray-500 hover:bg-gray-200 focus:outline-none focus:ring-4 focus:ring-gray-200 rounded-lg text-sm p-2.5 me-1">
+          <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
+          </svg>
+          <span class="sr-only">Search</span>
+        </button>
+        <div class="relative hidden md:block">
+          <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+            <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+              fill="none" viewBox="0 0 20 20">
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
+            </svg>
+            <span class="sr-only">Search icon</span>
+          </div>
+          <input type="text" id="search-navbar"
+            class="block w-full p-2  ps-10 text-sm text-gray-500 border border-gray-500 rounded-full focus:ring-black focus:border-black"
+            placeholder="Search for Product">
+        </div>
+        <div class="flex items-center justify-center ml-4">
+          <a href="#" class="mt-2">
+            <ion-icon name="heart-outline" class="h-6 w-6"></ion-icon>
+            <span class="flex absolute -mt-8 ml-4">
+              <span class="animate-ping absolute inline-flex h-3 w-3 rounded-full bg-pink-400 opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-3 w-3 bg-pink-500">
+              </span>
+            </span>
+          </a>
+          <a href="#" class="ml-4 mt-2">
+            <ion-icon name="person-outline" class="h-6 w-6"></ion-icon>
+          </a>
+        </div>
+
+      </div>
+      <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-search">
+        <div class="relative mt-3 md:hidden">
+          <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+            <svg class="w-4 h-4 text-gray-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+              viewBox="0 0 20 20">
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
+            </svg>
+          </div>
+          <input type="text" id="search-navbar"
+            class="block w-full p-2 ps-10 text-sm text-gray-500 border border-gray-500 rounded-l focus:ring-black focus:border-black"
+            placeholder="Search for Product">
+        </div>
+        <ul
+          class="flex-col p-4 md:p-0 mt-4 font-medium text-sm md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:flex hidden"
+          style="font-family: 'Roboto';">
+          <li>
+            <a href="#" class="block py-2 px-3 text-black md:p-0">Payment Confirmation</a>
+          </li>
+          <li>
+            <a href="#" class="block py-2 px-3 text-black md:p-0">Store Location</a>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </nav>
+
+
+  <nav class="bg-white border-gray-200 dark:bg-white md:block h-0 md:h-[6vh] shadow-sm" style="font-family: 'Roboto';">
+    <div class="max-w-screen-xl flex flex-wrap items-center justify-center mx-auto p-4">
+      <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse right-0">
+        <!-- <button data-collapse-toggle="navbar-cta" type="button"
+          class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+          aria-controls="navbar-cta" aria-expanded="false">
+          <span class="sr-only">Open main menu</span>
+          <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M1 1h15M1 7h15M1 13h15" />
+          </svg>
+        </button> -->
+      </div>
+      <div class="items-center justify-center hidden w-full md:flex md:w-auto md:order-1 z-40" id="navbar-cta">
+        <ul
+          class="flex justify-center items-center flex-col font-medium p-4 md:p-0 mt-0 border border-gray-100  bg-white md:shadow-none shadow-lg md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white">
+          <li>
+            <a href="#"
+              class="flex justify-center items-center md:w-auto w-[50vw] text-sm py-2 px-3 md:p-0 text-black rounded hover:bg-gray-100 md:hover:bg-transparent">Browse
+              All</a>
+          </li>
+          <li>
+            <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar"
+              class="flex justify-center items-center md:w-auto w-[50vw] md:mt-0 mt-2 py-2 px-3 text-sm text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-gray-500 md:p-0 dark:text-black md:dark:hover:text-gray-500 dark:focus:text-black dark:border-gray-700 md:dark:hover:bg-transparent">Air
+              Jordan <svg class="w-2.5 h-2.5 ms-1.5 text-gray-300" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                fill="none" viewBox="0 0 10 6">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                  d="m1 1 4 4 4-4" />
+              </svg></button>
+            <!-- Dropdown menu -->
+            <div id="dropdownNavbar"
+              class="z-30 hidden font-normal bg-white divide-y divide-gray-900 rounded-sm shadow-md w-44 dark:bg-white dark:divide-black">
+              <ul class="py-2 text-sm text-gray-500" aria-labelledby="dropdownLargeButton">
+                <li>
+                  <a href="#" class="block px-4 py-2  dark:hover:text-black">Air Jordan 1 High</a>
+                </li>
+                <li>
+                  <a href="#" class="block px-4 py-2  dark:hover:text-black">Air Jordan 1 Mid</a>
+                </li>
+                <li>
+                  <a href="#" class="block px-4 py-2  dark:hover:text-black">Air Jordan 1 Low</a>
+                </li>
+                <li>
+                  <a href="#" class="block px-4 py-2  dark:hover:text-black">Air Jordan 3</a>
+                </li>
+                <li>
+                  <a href="#" class="block px-4 py-2  dark:hover:text-black">Air Jordan 4</a>
+                </li>
+            </div>
+          </li>
+          <li>
+            <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar2"
+              class="flex justify-center items-center md:w-auto w-[50vw] md:mt-0 mt-2 py-2 px-3 text-sm text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-gray-500 md:p-0  dark:text-black md:dark:hover:text-gray-500 dark:focus:text-black dark:border-gray-700 md:dark:hover:bg-transparent">Nike
+              <svg class="w-2.5 h-2.5 ms-1.5 text-gray-300" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                fill="none" viewBox="0 0 10 6">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                  d="m1 1 4 4 4-4" />
+              </svg></button>
+            <!-- Dropdown menu -->
+            <div id="dropdownNavbar2"
+              class="z-30 hidden font-normal bg-white divide-y divide-gray-900 rounded-sm shadow-md w-44 dark:bg-white dark:divide-black">
+              <ul class="py-2 text-sm text-gray-500" aria-labelledby="dropdownLargeButton">
+                <li>
+                  <a href="#" class="block px-4 py-2  dark:hover:text-black">Air Force</a>
+                </li>
+                <li>
+                  <a href="#" class="block px-4 py-2  dark:hover:text-black">Air Max</a>
+                </li>
+                <li>
+                  <a href="#" class="block px-4 py-2  dark:hover:text-black">Dunk</a>
+                </li>
+                <li>
+                  <a href="#" class="block px-4 py-2  dark:hover:text-black">Sacai</a>
+                </li>
+                <li>
+                  <a href="#" class="block px-4 py-2  dark:hover:text-black">Others</a>
+                </li>
+            </div>
+          </li>
+          <li>
+            <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar3"
+              class="flex justify-center items-center md:w-auto w-[50vw] md:mt-0 mt-2 py-2 px-3 text-sm text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-gray-500 md:p-0  dark:text-black md:dark:hover:text-gray-500 dark:focus:text-black dark:border-gray-700 md:dark:hover:bg-transparent">New
+              Balance <svg class="w-2.5 h-2.5 ms-1.5 text-gray-300" aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                  d="m1 1 4 4 4-4" />
+              </svg></button>
+            <!-- Dropdown menu -->
+            <div id="dropdownNavbar3"
+              class="z-30 hidden font-normal bg-white divide-y divide-gray-900 rounded-sm shadow-md w-50 dark:bg-white dark:divide-black">
+              <ul class="py-2 text-sm text-gray-500" aria-labelledby="dropdownLargeButton">
+                <li>
+                  <a href="#" class="block px-4 py-2  dark:hover:text-black">New Balance 1906 Series</a>
+                </li>
+                <li>
+                  <a href="#" class="block px-4 py-2  dark:hover:text-black">New Balance 2002R Series</a>
+                </li>
+                <li>
+                  <a href="#" class="block px-4 py-2  dark:hover:text-black">New Balance 327 Series</a>
+                </li>
+                <li>
+                  <a href="#" class="block px-4 py-2  dark:hover:text-black">New Balance 530 Series</a>
+                </li>
+                <li>
+                  <a href="#" class="block px-4 py-2  dark:hover:text-black">New Balance 550 Series</a>
+                </li>
+                <li>
+                  <a href="#" class="block px-4 py-2  dark:hover:text-black">New Balance 990 Series</a>
+                </li>
+                <li>
+                  <a href="#" class="block px-4 py-2  dark:hover:text-black">Other New Balance</a>
+                </li>
+            </div>
+          </li>
+          <li>
+            <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar4"
+              class="flex justify-center items-center md:w-auto w-[50vw] md:mt-0 mt-2 py-2 px-3 text-sm text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-gray-500 md:p-0  dark:text-black md:dark:hover:text-gray-500 dark:focus:text-black dark:border-gray-700 md:dark:hover:bg-transparent">Adidas
+              <svg class="w-2.5 h-2.5 ms-1.5 text-gray-300" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                fill="none" viewBox="0 0 10 6">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                  d="m1 1 4 4 4-4" />
+              </svg></button>
+            <!-- Dropdown menu -->
+            <div id="dropdownNavbar4"
+              class="z-30 hidden font-normal bg-white divide-y divide-gray-900 rounded-sm shadow-md w-44 dark:bg-white dark:divide-black">
+              <ul class="py-2 text-sm text-gray-500" aria-labelledby="dropdownLargeButton">
+                <li>
+                  <a href="#" class="block px-4 py-2  dark:hover:text-black">Adidas Adilette</a>
+                </li>
+                <li>
+                  <a href="#" class="block px-4 py-2  dark:hover:text-black">Adidas Gazelle</a>
+                </li>
+                <li>
+                  <a href="#" class="block px-4 py-2  dark:hover:text-black">Adidas Samba</a>
+                </li>
+                <li>
+                  <a href="#" class="block px-4 py-2  dark:hover:text-black">Adidas Spezial</a>
+                </li>
+                <li>
+                  <a href="#" class="block px-4 py-2  dark:hover:text-black">Yeezy Series</a>
+                </li>
+                <li>
+                  <a href="#" class="block px-4 py-2  dark:hover:text-black">Yeezy Slide</a>
+                </li>
+            </div>
+          </li>
+          <li>
+            <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar5"
+              class="flex justify-center items-center md:w-auto w-[50vw] md:mt-0 mt-2 py-2 px-3 text-sm text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-gray-500 md:p-0 dark:text-black md:dark:hover:text-gray-500 dark:focus:text-black dark:border-gray-700 md:dark:hover:bg-transparent">More
+              Sneakers <svg class="w-2.5 h-2.5 ms-1.5 text-gray-300" aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                  d="m1 1 4 4 4-4" />
+              </svg></button>
+            <!-- Dropdown menu -->
+            <div id="dropdownNavbar5"
+              class="z-30 hidden font-normal bg-white divide-y divide-gray-900 rounded-sm shadow-md w-44 dark:bg-white dark:divide-black">
+              <ul class="py-2 text-sm text-gray-500" aria-labelledby="dropdownLargeButton">
+                <li>
+                  <a href="#" class="block px-4 py-2  dark:hover:text-black">Asics</a>
+                </li>
+                <li>
+                  <a href="#" class="block px-4 py-2  dark:hover:text-black">Salomon</a>
+                </li>
+                <li>
+                  <a href="#" class="block px-4 py-2  dark:hover:text-black">Others</a>
+                </li>
+            </div>
+          </li>
+          <li>
+            <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar6"
+              class="flex justify-center items-center md:w-auto w-[50vw] md:mt-0 mt-2 py-2 px-3 text-sm text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-gray-500 md:p-0  dark:text-black md:dark:hover:text-gray-500 dark:focus:text-black dark:border-gray-700 md:dark:hover:bg-transparent">Apparel
+              <svg class="w-2.5 h-2.5 ms-1.5 text-gray-300" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                fill="none" viewBox="0 0 10 6">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                  d="m1 1 4 4 4-4" />
+              </svg></button>
+            <!-- Dropdown menu -->
+            <div id="dropdownNavbar6"
+              class="z-30 hidden font-normal bg-white divide-y divide-gray-900 rounded-sm shadow-md w-44 dark:bg-white dark:divide-black">
+              <ul class="py-2 text-sm text-gray-500" aria-labelledby="dropdownLargeButton">
+                <li>
+                  <a href="#" class="block px-4 py-2  dark:hover:text-black">ADLV</a>
+                </li>
+                <li>
+                  <a href="#" class="block px-4 py-2  dark:hover:text-black">Essentials</a>
+                </li>
+                <li>
+                  <a href="#" class="block px-4 py-2  dark:hover:text-black">Ganni</a>
+                </li>
+                <li>
+                  <a href="#" class="block px-4 py-2  dark:hover:text-black">Kenzo</a>
+                </li>
+                <li>
+                  <a href="#" class="block px-4 py-2  dark:hover:text-black">KITH</a>
+                </li>
+                <li>
+                  <a href="#" class="block px-4 py-2  dark:hover:text-black">Life Work</a>
+                </li>
+                <li>
+                  <a href="#" class="block px-4 py-2  dark:hover:text-black">Mardi</a>
+                </li>
+                <li>
+                  <a href="#" class="block px-4 py-2  dark:hover:text-black">Off-White</a>
+                </li>
+                <li>
+                  <a href="#" class="block px-4 py-2  dark:hover:text-black">Ricky Is Clown</a>
+                </li>
+                <li>
+                  <a href="#" class="block px-4 py-2  dark:hover:text-black">Stussy</a>
+                </li>
+                <li>
+                  <a href="#" class="block px-4 py-2  dark:hover:text-black">The North Face</a>
+                </li>
+                <li>
+                  <a href="#" class="block px-4 py-2  dark:hover:text-black">Others</a>
+                </li>
+            </div>
+          </li>
+          <li>
+            <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar7"
+              class="flex justify-center items-center md:w-auto w-[50vw] md:mt-0 mt-2 py-2 px-3 text-sm text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-gray-500 md:p-0 dark:text-black md:dark:hover:text-gray-500 dark:focus:text-black dark:border-gray-700 md:dark:hover:bg-transparent">Accessories
+              <svg class="w-2.5 h-2.5 ms-1.5 text-gray-300" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                fill="none" viewBox="0 0 10 6">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                  d="m1 1 4 4 4-4" />
+              </svg></button>
+            <!-- Dropdown menu -->
+            <div id="dropdownNavbar7"
+              class="z-30 hidden font-normal bg-white divide-y divide-gray-900 rounded-sm shadow-md w-44 dark:bg-white dark:divide-black">
+              <ul class="py-2 text-sm text-gray-500" aria-labelledby="dropdownLargeButton">
+                <li>
+                  <a href="#" class="block px-4 py-2  dark:hover:text-black">Bag</a>
+                </li>
+                <li>
+                  <a href="#" class="block px-4 py-2  dark:hover:text-black">Book</a>
+                </li>
+                <li>
+                  <a href="#" class="block px-4 py-2  dark:hover:text-black">Cap</a>
+                </li>
+                <li>
+                  <a href="#" class="block px-4 py-2  dark:hover:text-black">Collectibles</a>
+                </li>
+                <li>
+                  <a href="#" class="block px-4 py-2  dark:hover:text-black">Others</a>
+                </li>
+            </div>
+          </li>
+          <li>
+            <a href="#"
+              class="flex justify-center items-center md:w-auto w-[50vw] md:mt-0 mt-2 text-sm py-2 px-3 md:p-0 text-black rounded hover:bg-gray-100 md:hover:bg-transparent">Kids
+              Collection</a>
+          </li>
+          <li>
+            <a href="#"
+              class="flex justify-center items-center md:w-auto w-[50vw] md:mt-0 mt-2 text-sm py-2 px-3 md:p-0 text-black rounded hover:bg-gray-100 md:hover:bg-transparent">Women
+              Collection</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+
+  <div class="flex items-center justify-center md:mt-5">
+    <div id="indicators-carousel" class="relative md:w-4/5 w-full md:h-[80vh] " data-carousel="slide">
+      <!-- Carousel wrapper -->
+      <div class="relative h-56 overflow-hidden md:h-[80vh] rounded-lg">
+        <!-- Item 1 -->
+        <div class="hidden duration-700 ease-in-out" data-carousel-item="active">
+          <img src="https://senikersku.com/wp-content/uploads/2024/02/BANNER-HOT-ITEMS-WEB-2.jpg"
+            class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+        </div>
+        <!-- Item 2 -->
+        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+          <img src="https://senikersku.com/wp-content/uploads/2024/01/BANNER-SAMBA-WEB-1.jpg"
+            class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+        </div>
+        <!-- Item 3 -->
+        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+          <img src="https://senikersku.com/wp-content/uploads/2024/01/BANNER-AJ-WOMEN-WEB-1.jpg"
+            class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+        </div>
+        <!-- Item 4 -->
+        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+          <img src="https://senikersku.com/wp-content/uploads/2024/01/BANNER-AJ1-MEN-WEB.jpg"
+            class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+        </div>
+        <!-- Item 5 -->
+        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+          <img src="https://senikersku.com/wp-content/uploads/2024/02/BANNER-GUCCI-WEB.jpg"
+            class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+        </div>
+      </div>
+      <!-- Slider indicators -->
+      <div class="absolute z-30 flex md:mt-0 mt-5 -translate-x-1/2 space-x-3 rtl:space-x-reverse md:bottom-5 left-1/2">
+        <button type="button" class="w-3 h-3 rounded-full" aria-current="true" aria-label="Slide 1"
+          data-carousel-slide-to="0"></button>
+        <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2"
+          data-carousel-slide-to="1"></button>
+        <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 3"
+          data-carousel-slide-to="2"></button>
+        <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 4"
+          data-carousel-slide-to="3"></button>
+        <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 5"
+          data-carousel-slide-to="4"></button>
+      </div>
+      <!-- Slider controls -->
+      <button type="button"
+        class="absolute md:top-0 start-10 z-30 md:block hidden items-center justify-center md:h-full px-4 cursor-pointer group focus:outline-none"
+        data-carousel-prev>
+        <span
+          class="inline-flex items-center justify-center md:w-10 md:h-10 rounded-full  group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-white/30 group-focus:outline-none">
+          <svg class="w-6 h-6 text-white dark:text-black rtl:rotate-180" aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.1"
+              d="M5 1 1 5l4 4" />
+          </svg>
+          <span class="sr-only">Previous</span>
+        </span>
+      </button>
+
+      <button type="button"
+        class="absolute md:top-0 end-10 z-30 md:block hidden items-center justify-center md:h-full px-4 cursor-pointer group focus:outline-none"
+        data-carousel-next>
+        <span
+          class="inline-flex items-center justify-center md:w-10 md:h-10 rounded-full  group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-white/30 group-focus:outline-none">
+          <svg class="w-6 h-6 text-white dark:text-black rtl:rotate-180" aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.1"
+              d="m1 9 4-4-4-4" />
+          </svg>
+          <span class="sr-only">Next</span>
+        </span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Image gallery -->
+  <div id="gallery" class="mt-20 flex justify-center items-center flex-col">
+    <p class="md:text-3xl text-2xl font-semibold" style="font-family: 'Sofia Pro';">Featured</p>
+    <p class="text-gray-400 md:text-base text-sm font-light" style="font-family: 'Sofia Pro';">Superior products in our shop</p>
+    <div class="mx-auto mt-6 max-w-2xl sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-3 lg:gap-x-8 lg:px-8 w-[80%]">
+      <div class="aspect-h-4 aspect-w-3 overflow-hidden sm:rounded-lg lg:block">
+        <img src="https://i.pinimg.com/564x/57/48/5f/57485fe8ed69f66e15e9ad3762a02335.jpg"
+          alt="Two each of gray, white, and black shirts laying flat."
+          class="h-full w-full object-cover object-center hover:scale-110 duration-500">
+      </div>
+      <div class="lg:grid lg:grid-cols-1 lg:gap-y-8">
+        <div class="aspect-h-2 aspect-w-3 overflow-hidden md:mt-0 mt-10 sm:rounded-lg">
+          <img src="https://i.pinimg.com/564x/9c/fc/bf/9cfcbf61bb7acf11fdc1bc09d1f74317.jpg"
+            alt="Model wearing plain black basic tee."
+            class="h-full w-full object-cover object-center hover:scale-110 duration-500 ">
+        </div>
+        <div class="aspect-h-2 aspect-w-3 overflow-hidden md:mt-0 mt-10 sm:rounded-lg " style="transform: scaleX(-1);">
+          <img src="https://i.pinimg.com/564x/04/af/30/04af3044202f2dbf2ae5f6365da5aaa1.jpg"
+            alt="Model wearing plain gray basic tee."
+            class="h-full w-full object-cover object-center hover:scale-110 duration-500 ">
+        </div>
+      </div>
+      <div class="aspect-h-5 aspect-w-4 lg:aspect-h-4 md:mt-0 mt-10 lg:aspect-w-3 overflow-hidden sm:rounded-lg">
+        <img src="https://i.pinimg.com/564x/9e/cc/90/9ecc90c2ed9e9bcdfb31185972b80da7.jpg"
+          alt="Model wearing plain white basic tee."
+          class="h-full w-full object-cover object-center hover:scale-110 duration-500">
+      </div>
+    </div>
+  </div>
+
+  <section aria-labelledby="related-products-heading" class="bg-white" style="font-family: 'Sofia Pro';">
+    <div class="mx-auto max-w-2xl px-4 py-24 sm:px-6 lg:max-w-7xl lg:px-8 w-[85%]">
+      <div class="flex w-full">
+        <h2 id="related-products-heading" class="md:text-2xl text-xl font-bold tracking-tight text-gray-900 w-full">New Arrival
+        </h2>
+        <div class="flex justify-end items-end w-full">
+          <a href=""
+            class="justify-center items-center md:text-xs text-[11px] font-medium border-2 border-t-0 border-x-0 hover:border-gray-400 duration-500 tracking-wide">VIEW
+            ALL</a>
+        </div>
+      </div>
+      <div class="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
+
+        <div class="group relative">
+          <div
+            class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-60 lg:h-80 transform  group-hover:scale-110 duration-500 delay-100">
+            <img src="https://i.pinimg.com/564x/9b/07/56/9b0756c2e898ea0ed083f033b47551c3.jpg"
+              alt="Front of men&#039;s Basic Tee in black."
+              class="h-full w-full object-cover object-center lg:h-full lg:w-full group-hover:scale-x-[-1] ">
+          </div>
+          <div class="mt-4 flex justify-between">
+            <div>
+              <h3 class="text-sm text-gray-700">
+                <a href="#">
+                  <span aria-hidden="true" class="absolute inset-0"></span>
+                  Jordan 1 High Zoom CMFT PSG
+                </a>
+              </h3>
+              <p class="mt-1 text-sm text-gray-500">Shoes</p>
+            </div>
+            <p class="text-sm font-medium text-gray-900">$130</p>
+          </div>
+        </div>
+
+        <div class="group relative md:mt-0 mt-10">
+          <div
+            class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-60 lg:h-80 transform  group-hover:scale-110 duration-500 delay-100">
+            <img src="https://i.pinimg.com/564x/18/c4/26/18c426083f679fc67315285f36325d66.jpg"
+              alt="Front of men&#039;s Basic Tee in black."
+              class="h-full w-full object-cover object-center lg:h-full lg:w-full ">
+          </div>
+          <div class="mt-4 flex justify-between">
+            <div>
+              <h3 class="text-sm text-gray-700">
+                <a href="#">
+                  <span aria-hidden="true" class="absolute inset-0"></span>
+                  Stussy Stock Skater Tee
+                </a>
+              </h3>
+              <p class="mt-1 text-sm text-gray-500">T-Shirt</p>
+            </div>
+            <p class="text-sm font-medium text-gray-900">$80</p>
+          </div>
+        </div>
+
+        <div class="group relative md:mt-0 mt-10">
+          <div
+            class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-60 lg:h-80 transform  group-hover:scale-110 duration-500 delay-100">
+            <img src="https://i.pinimg.com/564x/cd/1c/71/cd1c718bb5dc166ea6bba150fcc96f56.jpg"
+              alt="Front of men&#039;s Basic Tee in black."
+              class="h-full w-full object-cover object-center lg:h-full lg:w-full ">
+          </div>
+          <div class="mt-4 flex justify-between">
+            <div>
+              <h3 class="text-sm text-gray-700">
+                <a href="#">
+                  <span aria-hidden="true" class="absolute inset-0"></span>
+                  Stone Island Soft Shell-R e.dye Tech
+                </a>
+              </h3>
+              <p class="mt-1 text-sm text-gray-500">Jacket</p>
+            </div>
+            <p class="text-sm font-medium text-gray-900">$568</p>
+          </div>
+        </div>
+
+        <div class="group relative md:mt-0 mt-10">
+          <div
+            class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-60 lg:h-80 transform  group-hover:scale-110 duration-500 delay-100">
+            <img src="https://i.pinimg.com/564x/36/97/37/3697372350e7092d07c13a028c0a7a57.jpg"
+              alt="Front of men&#039;s Basic Tee in black."
+              class="h-full w-full object-cover object-center lg:h-full lg:w-full group-hover:scale-x-[-1] ">
+          </div>
+          <div class="mt-4 flex justify-between">
+            <div>
+              <h3 class="text-sm text-gray-700">
+                <a href="#">
+                  <span aria-hidden="true" class="absolute inset-0"></span>
+                  Crocs Classic Clog Hello Kitty
+                </a>
+              </h3>
+              <p class="mt-1 text-sm text-gray-500">Slippers</p>
+            </div>
+            <p class="text-sm font-medium text-gray-900">$93</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <div class="flex justify-center items-center w-[72%] mx-auto">
+    <div class="flex w-full">
+
+      <div class="flex items-start justify-start w-full">
+        <p class="md:text-2xl text-xl font-bold tracking-tight text-gray-900 w-full" style="font-family: 'Sofia Pro';">Brand
+          Popular</p>
+      </div>
+
+      <div class="flex items-center w-full justify-end">
+        <button aria-label="slide backward"
+          class=" z-30 mr-8 focus:outline-none focus:bg-gray-400 focus:ring-2 focus:ring-offset-2 focus:ring-gray-400 cursor-pointer"
+          id="prev">
+          <svg class="dark:text-gray-900" width="8" height="14" viewBox="0 0 8 14" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <path d="M7 1L1 7L7 13" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>
+        </button>
+
+        <button aria-label="slide forward"
+          class="z-30 md:mr-5 focus:outline-none focus:bg-gray-400 focus:ring-2 focus:ring-offset-2 focus:ring-gray-400"
+          id="next">
+          <svg class="dark:text-gray-900" width="8" height="14" viewBox="0 0 8 14" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <path d="M1 1L7 7L1 13" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="flex items-center justify-center w-[72%] h-full py-8 md:px-4 mx-auto">
+
+    <div class="w-full relative flex items-center justify-center">
+
+      <div class="w-full h-full mx-auto overflow-x-hidden overflow-y-hidden ">
+        <div id="slider"
+          class="h-full flex lg:gap-8 md:gap-6 gap-14 items-center justify-start transition ease-out duration-700">
+
+          <div class="flex flex-shrink-0 relative w-full sm:w-auto">
+            <img src="https://i.pinimg.com/564x/3b/aa/82/3baa82145581e044174370e69928e34b.jpg"
+              alt="black chair and white table" class="object-cover object-center h-[43vh] w-[43vh] " />
+            <div class="bg-gray-800 bg-opacity-20 hover:bg-opacity-40 absolute w-full h-full duration-700">
+              <a href=""><div
+                class="opacity-0 hover:opacity-100 duration-700 absolute inset-0 z-10 flex justify-center items-center text-5xl text-white font-semibold w-full h-full"
+                style="text-shadow: 0px 0px 15px #00000050;">Air Jordan</div>
+            </div></a>
+          </div>
+
+          <div class="flex flex-shrink-0 relative w-full sm:w-auto ">
+            <img src="https://i.pinimg.com/564x/00/7e/b9/007eb9529817c9e21fa7a73bf69b026a.jpg"
+              alt="black chair and white table" class="object-cover object-center h-[43vh] w-[43vh] " />
+            <div class="bg-gray-800 bg-opacity-20 hover:bg-opacity-40 absolute w-full h-full duration-700">
+              <a href=""><div
+                class="opacity-0 hover:opacity-100 duration-700 absolute inset-0 z-10 flex justify-center items-center text-5xl text-white font-semibold w-full h-full"
+                style="text-shadow: 0px 0px 15px #00000050;">Nike</div>
+            </div></a>
+          </div>
+
+          <div class="flex flex-shrink-0 relative w-full sm:w-auto ">
+            <img src="https://i.pinimg.com/564x/a7/c4/7b/a7c47b595e9f98360db899a2634a48ce.jpg"
+              alt="black chair and white table" class="object-cover object-center h-[43vh] w-[43vh] " />
+            <div class="bg-gray-800 bg-opacity-20 hover:bg-opacity-40 absolute w-full h-full duration-700">
+              <a href=""><div
+                class="opacity-0 hover:opacity-100 duration-700 absolute inset-0 z-10 flex justify-center items-center text-5xl text-white font-semibold w-full h-full"
+                style="text-shadow: 0px 0px 15px #00000050;">New Balance</div>
+            </div></a>
+          </div>
+
+          <div class="flex flex-shrink-0 relative w-full sm:w-auto ">
+            <img src="https://i.pinimg.com/564x/d3/14/d5/d314d51c5d340fc435cf23fe0cccc90c.jpg"
+              alt="black chair and white table" class="object-cover object-center h-[43vh] w-[43vh] " />
+            <div class="bg-gray-800 bg-opacity-20 hover:bg-opacity-40 absolute w-full h-full duration-700">
+              <a href=""><div
+                class="opacity-0 hover:opacity-100 duration-700 absolute inset-0 z-10 flex justify-center items-center text-5xl text-white font-semibold w-full h-full"
+                style="text-shadow: 0px 0px 15px #00000050;">Adidas</div>
+            </div></a>
+          </div>
+
+          <div class="flex flex-shrink-0 relative w-full sm:w-auto ">
+            <img
+              src="https://senikersku.com/wp-content/uploads/2024/02/POWERPUFF-GIRLS-X-SB-DUNK-LOW-BLOSSOM-WMNS-8-2048x2048.jpg"
+              alt="black chair and white table" class="object-cover object-center h-[43vh] w-[43vh] " />
+            <div class="bg-gray-800 bg-opacity-20 hover:bg-opacity-40 absolute w-full h-full duration-700">
+              <a href=""><div
+                class="opacity-0 hover:opacity-100 duration-700 absolute inset-0 z-10 flex justify-center items-center text-5xl text-white font-semibold w-full h-full"
+                style="text-shadow: 0px 0px 15px #00000050;">Limited Edition</div>
+            </div></a>
+          </div>
+
+          <div class="flex flex-shrink-0 relative w-full sm:w-auto ">
+            <img src="https://i.pinimg.com/564x/c9/fb/16/c9fb1654c258a04af343c1ad4ba1ace8.jpg"
+              alt="black chair and white table" class="object-cover object-center h-[43vh] w-[43vh] " />
+            <div class="bg-gray-800 bg-opacity-20 hover:bg-opacity-40 absolute w-full h-full duration-700">
+              <a href=""><div
+                class="opacity-0 hover:opacity-100 duration-700 absolute inset-0 z-10 flex justify-center items-center text-5xl text-white font-semibold w-full h-full"
+                style="text-shadow: 0px 0px 15px #00000050;">Others</div>
+            </div></a>
+          </div>
+
+
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <footer class="bg-[#08070c] text-[#585858] pt-8 pb-5 flex flex-col justify-center items-center mt-16">
+    <div class="h-[10vh] mx-auto flex justify-center items-center">
+      <div class="area-icon flex justify-center items-center">
+        <a href="#" class="hover:text-[#999999] duration-500"><ion-icon size="large" name="logo-twitter"></ion-icon></a>
+        <p class="md:text-5xl text-2xl font-light  md:mx-16 mx-4 mb-3 text-[#313131]">/</p>
+        <a href="#" class="hover:text-[#999999] duration-500"><ion-icon size="large" name="logo-facebook"></ion-icon></a>
+        <p class="md:text-5xl text-2xl font-light  md:mx-16 mx-4 mb-3 text-[#313131]">/</p>
+        <a href="#" class="hover:text-[#999999] duration-500"><ion-icon size="large" name="logo-instagram"></ion-icon></a>
+        <p class="md:text-5xl text-2xl font-light  md:mx-16 mx-4 mb-3 text-[#313131]">/</p>
+        <a href="#" class="hover:text-[#999999] duration-500"><ion-icon size="large" name="logo-dribbble"></ion-icon></a>
+        <p class="md:text-5xl text-2xl font-light  md:mx-16 mx-4 mb-3 text-[#313131]">/</p>
+        <a href="#" class="hover:text-[#999999] duration-500"><ion-icon size="large" name="logo-behance"></ion-icon></a>
+      </div>
+    </div>
+
+    <div class="mx-auto flex justify-center items-center" >
+      <div class="area-bawah md:w-[85vh] flex">
+        <div class="area-kiri justify-start items-end flex md:w-4/5 md:mt-0 mt-16 w-48" style="font-family: Roboto;">
+          <a href="" class="md:text-sm text-xs tracking-tighter hover:text-[#999999] duration-500 md:mr-5 mr-5">ORDER STATUS</a>
+          <a href="" class="md:text-sm text-xs tracking-tighter hover:text-[#999999] duration-500">PRIVACY POLICY</a>
+        </div>
+        <div class="area-tengah flex justify-center items-center md:w-full w-0 md:mt-8 md:mb-0 mb-7 ">
+          <p class="self-center md:text-xl font-medium whitespace-nowrap hover:text-[#999999] duration-500" style="font-family: 'Joyride W05 STD';">MYSNEAKERS</p>
+        </div>
+        <div class="area-kanan flex justify-end items-end md:w-4/5 md:mt-0 mt-16 w-48" style="font-family: Roboto;">
+          <a href="#" class="md:text-sm text-xs tracking-tighter hover:text-[#999999] duration-500">PAYMENT OPTIONS</a>
+          <a href="#" class="md:text-sm text-xs tracking-tighter hover:text-[#999999] duration-500 md:ml-5 ml-5">CONTACTS US</a>
+        </div>
+      </div>
+    </div>
+
+    <p class="mt-8 md:text-base text-sm" style="font-family: Sofia Pro; ">© 2024 MYSNEAKERS, Inc. All Rights Reserved</p>
+  </footer>
+</div>
+
+
+
+
+
+
+
+  <script>
+    let defaultTransform = 0;
+
+    function goNext() {
+      defaultTransform = defaultTransform - 398;
+      var slider = document.getElementById("slider");
+      if (Math.abs(defaultTransform) >= slider.scrollWidth / 1.7) defaultTransform = 0;
+      slider.style.transform = "translateX(" + defaultTransform + "px)";
+    }
+    next.addEventListener("click", goNext);
+
+    function goPrev() {
+      var slider = document.getElementById("slider");
+      if (Math.abs(defaultTransform) === 0) defaultTransform = 0;
+      else defaultTransform = defaultTransform + 398;
+      slider.style.transform = "translateX(" + defaultTransform + "px)";
+    }
+    prev.addEventListener("click", goPrev);
+  </script>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.js"></script>
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>
